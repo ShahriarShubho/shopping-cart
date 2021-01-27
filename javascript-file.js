@@ -1,9 +1,9 @@
 const plusButton = document.getElementById("plusBtn");
 plusButton.addEventListener("click", function(){
-    clickPlus("numberOfPhone");
-    addTaka("addTaka", 1219);
-    addTaka("subTotalTaka", 1219);
-    addTaka("totalTaka", 1219);
+    numberOfProduct("numberOfPhone", 1);
+    takaCount("addTaka", 1219);
+    takaCount("subTotalTaka", 1219);
+    takaCount("totalTaka", 1219);
 
     // const numberOfPhone = document.getElementById("numberOfPhone").value;
     // phoneNumber = parseFloat(numberOfPhone);
@@ -14,37 +14,36 @@ plusButton.addEventListener("click", function(){
 
 const secondPlusButton = document.getElementById("secondPlusBtn");
 secondPlusButton.addEventListener("click", function(){
-    clickPlus("numberOfCase");
-    addTaka("addCaseTaka", 59)
-    addTaka("subTotalTaka", 59)
-    addTaka("totalTaka", 59)
+    numberOfProduct("numberOfCase", 1);
+    takaCount("addCaseTaka", 59)
+    takaCount("subTotalTaka", 59)
+    takaCount("totalTaka", 59)
    
 })
 
 const minusButton = document.getElementById("minusBtn");
 minusButton.addEventListener("click", function(){
-    const value = 
-    clickMinus("numberOfPhone")
-    addTaka("addTaka", -1219);
-    addTaka("subTotalTaka", -1219);
-    addTaka("totalTaka", -1219);
+    numberOfProduct("numberOfPhone", -1)
+    takaCount("addTaka", -1219);
+    takaCount("subTotalTaka", -1219);
+    takaCount("totalTaka", -1219);
 
 })
 
 const secondMinusButton = document.getElementById("secondMinusBtn");
 secondMinusButton.addEventListener("click", function(){
-    clickMinus("numberOfCase");
-    addTaka("addCaseTaka", -59);
-    addTaka("subTotalTaka", -59);
-    addTaka("totalTaka", -59);
+    numberOfProduct("numberOfCase", -1);
+    takaCount("addCaseTaka", -59);
+    takaCount("subTotalTaka", -59);
+    takaCount("totalTaka", -59);
 
 })
 
-function addTaka(id, value){
+function takaCount(id, amount){
 
     const numberOfPhone = document.getElementById(id).innerText;
     phoneNumber = parseFloat(numberOfPhone);
-    const increasingNumber = phoneNumber + value;
+    const increasingNumber = phoneNumber + amount;
     const result = document.getElementById(id).innerText = increasingNumber;
     return result;
 }
@@ -58,19 +57,20 @@ function addTaka(id, value){
 // }
 
 
-function clickMinus(id){
+function numberOfProduct(id, number){
 
     const numberOfPhone = document.getElementById(id).value;
     phoneNumber = parseFloat(numberOfPhone);
-    const increasingNumber = phoneNumber - 1;
-    document.getElementById(id).value = increasingNumber;
+    const increasingNumber = phoneNumber + number;
+    const product = document.getElementById(id).value = increasingNumber;
+    return product;
 }
 
-function clickPlus(id){
+// function clickPlus(id){
 
-    const numberOfPhone = document.getElementById(id).value;
-    phoneNumber = parseFloat(numberOfPhone);
-    const increasingNumber = phoneNumber + 1;
-    document.getElementById(id).value = increasingNumber;
-}
+//     const numberOfPhone = document.getElementById(id).value;
+//     phoneNumber = parseFloat(numberOfPhone);
+//     const increasingNumber = phoneNumber + 1;
+//     document.getElementById(id).value = increasingNumber;
+// }
 
